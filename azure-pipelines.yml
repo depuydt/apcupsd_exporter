@@ -17,7 +17,7 @@ resources:
 - repo: self
 
 variables:
-  tag: '0.1.$(Build.BuildNumber)'
+  tag: '0.1'
 
 stages:
 - stage: Build
@@ -37,3 +37,5 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+          $(tag).$(Build.BuildNumber)
+          latest
